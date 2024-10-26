@@ -5,6 +5,7 @@
 
 <script>
     import { clubs } from '$lib/clubs.js';
+    import IconStar from 'phosphor-svelte/lib/StarFour';
 </script>
 
 <main>
@@ -14,27 +15,106 @@
     <p>Brought to you by the Interlake Programming Club.</p>
     <br>
     <h2>Sponsored Clubs</h2>
-    {#each $clubs as club, i}
-        {#if club.sponsored}
-            <a href="/{club.id}" class="club" title="{club.name}">
-                {club.name}
-            </a>
-        {/if}
-    {/each}
-    <br>
+    <div class="sponsored">
+        {#each $clubs as club, i}
+            {#if club.sponsored}
+                <a href="/{club.id}" class="club" title="{club.name}">
+                    <div class="left">
+                        <h3 class='highlighted'>{club.name}</h3>
+                        <p>Day: {club.day}</p>
+                        <p>Time: {club.start_time} - {club.end_time}</p>
+                        <p>Location: {club.room}</p>
+                    </div>
+                    <div class="smallbuttons">
+                        <IconStar style="font-size: 1.5rem;" />
+                    </div>
+                </a>
+            {/if}
+        {/each}
+    </div>
     <h2>Other Clubs</h2>
-    {#each $clubs as club, i}
-        {#if (!club.sponsored)}
-            <a href="/{club.id}" class="club" title="{club.name}">
-                {club.name}
-            </a>
-        {/if}
-    {/each}
+    <div class="regular">
+        {#each $clubs as club, i}
+            {#if (!club.sponsored)}
+                <a href="/{club.id}" class="club" title="{club.name}">
+                    <div class="left">
+                        <h3 class='highlighted'>{club.name}</h3>
+                        <p>Day: {club.day}</p>
+                        <p>Time: {club.start_time} - {club.end_time}</p>
+                        <p>Location: {club.room}</p>
+                    </div>
+                    <div class="smallbuttons">
+                        <IconStar style="font-size: 1.5rem;" />
+                    </div>
+                </a>
+            {/if}
+        {/each}
+    </div>
 </main>
 
 
 <style>
-    main {
-        
+    .sponsored {
+        display: grid;
+		grid-template-columns: 32.25% 32.25% 32.25%;
+		gap: 1rem;
+	}
+    .regular {
+        display: grid;
+		grid-template-columns: 32.25% 32.25% 32.25%;
+		gap: 1rem;
+	}
+    .club {
+        background-color: rgb(80, 91, 110);
+        padding: 1.1rem;
+		backdrop-filter: blur(6px);
+		border-radius: 1rem;
+		text-decoration: none;
+		color: inherit;
+		cursor: pointer;
+		display: flex;
+		justify-content: space-between;
+		align-items: start;
+		transition: 0.2s;
+
+		h3 {
+			margin: 0;
+			font-size: 1.3rem;
+			font-weight: 300;
+		}
+        .highlighted {
+            font-weight: 600;
+        }
+
+		p {
+			margin: 0.5rem 0 0 0;
+		}
+
+		button,
+		.icon-button {
+			padding: 0.7rem;
+			backdrop-filter: none;
+		}
+
+		&.create {
+			padding: 1rem;
+			margin-top: 1rem;
+			justify-content: center;
+			align-items: center;
+			font-size: 1.2rem;
+
+			span {
+				margin-left: 0.5rem;
+			}
+		}
+
+		.left {
+			margin-left: 0.3rem;
+            text-align: left;
+		}
+
+		&:hover:not(:has(button:hover)) {
+			background-color: var(--bg-3);
+		}
     }
 </style>

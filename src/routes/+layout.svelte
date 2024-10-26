@@ -2,16 +2,20 @@
 	import { goto } from "$app/navigation";
     import { page } from '$app/stores';
     import { invalidate } from '$app/navigation';
+    import { fade } from 'svelte/transition';
 
     /**
 	 * @type {any}
 	 */
     let searchTerm;
 
+    export let data;
+
     function search() {
         goto('/bap').then(
             () => goto(`/search?q=${searchTerm}`)
         );
+        /*searchTerm = '';*/
     }
 </script>
 
@@ -34,12 +38,14 @@
         </div>
         <div class="right">
             <a class="side" href="/about">About</a>
-            <a class="side" href="/settings">Settings</a>
+            <a class="side" href="/register">Register</a>
         </div>
     </div>
-    <div class="content">
-        <slot />
-    </div>
+    {#key data.pathname}
+        <div class="content" in:fade={{ duration: 100, delay: 100 }} out:fade={{ duration: 100 }}>
+            <slot />
+        </div>
+    {/key}
     
 </div>
 

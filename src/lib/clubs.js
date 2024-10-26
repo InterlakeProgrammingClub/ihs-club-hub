@@ -3,7 +3,7 @@ export const clubs = persisted('presets', [
 	{
 		name: 'Programming Club',
         id: 'programming-club',
-        categories: ['technology', 'competition', 'creativity'],
+        categories: ['stem', 'competition', 'creativity'],
         sponsored: true,
         color: '#ffffff',
 		room: 'Room 1809',
@@ -24,7 +24,8 @@ export const clubs = persisted('presets', [
             title: '',
             subtitle: '',
             content: '',
-        }
+        },
+        website: '',
 	},
 	{
 		name: 'Korean Culture Club',
@@ -50,7 +51,8 @@ export const clubs = persisted('presets', [
             title: '',
             subtitle: '',
             content: '',
-        }
+        },
+        website: '',
 	},
     {
 		name: 'Ping-Pong Club',
@@ -76,6 +78,7 @@ export const clubs = persisted('presets', [
             title: '',
             subtitle: '',
             content: '',
-        }
+        },
+        website: '',
 	},
 ]);
