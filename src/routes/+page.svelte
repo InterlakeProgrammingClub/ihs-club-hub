@@ -21,9 +21,19 @@
                 <a href="/{club.id}" class="club" title="{club.name}">
                     <div class="left">
                         <h3 class='highlighted'>{club.name}</h3>
-                        <p>Day: {club.day}</p>
-                        <p>Time: {club.start_time} - {club.end_time}</p>
-                        <p>Location: {club.room}</p>
+                        <p>{club.day}s ~ {club.start_time} - {club.end_time} ~ {club.room}</p>
+                        <p>
+                            {#if club.volunteer_hours}
+                                Volunteer Hours Provided
+                            {/if}
+                            {#if club.food}
+                                Food Provided
+                            {/if}
+                            {#if club.drinks}
+                                Drinks Provided
+                            {/if}
+                        </p>
+                        <p>{club.info.hook}</p>
                     </div>
                     <div class="smallbuttons">
                         <IconStar style="font-size: 1.5rem;" />
@@ -39,9 +49,19 @@
                 <a href="/{club.id}" class="club" title="{club.name}">
                     <div class="left">
                         <h3 class='highlighted'>{club.name}</h3>
-                        <p>Day: {club.day}</p>
-                        <p>Time: {club.start_time} - {club.end_time}</p>
-                        <p>Location: {club.room}</p>
+                        <p>{club.day}s ~ {club.start_time} - {club.end_time} ~ {club.room}</p>
+                        <p>
+                            {#if club.volunteer_hours}
+                                Volunteer Hours Provided
+                            {/if}
+                            {#if club.food}
+                                Food Provided
+                            {/if}
+                            {#if club.drinks}
+                                Drinks Provided
+                            {/if}
+                        </p>
+                        <p>{club.info.hook}</p>
                     </div>
                     <div class="smallbuttons">
                         <IconStar style="font-size: 1.5rem;" />

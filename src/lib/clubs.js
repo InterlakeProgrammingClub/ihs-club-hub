@@ -3,6 +3,7 @@ export const clubs = persisted('presets', [
 	{
 		name: 'Programming Club',
         id: 'programming-club',
+        //for image use {id}.png and put in icon folder
         categories: ['stem', 'competition', 'creativity'],
         sponsored: true,
         color: '#ffffff',
@@ -17,7 +18,7 @@ export const clubs = persisted('presets', [
         food: true,
         drinks: false,
         info: {
-            hook: '',
+            hook: 'A club for casual and die-hard programmers alike',
             description: '',
         },
         special_notice: {
@@ -25,7 +26,10 @@ export const clubs = persisted('presets', [
             subtitle: '',
             content: '',
         },
-        website: '',
+        links: {
+            website: '',
+            other_links: [],
+        }
 	},
 	{
 		name: 'Korean Culture Club',
@@ -52,7 +56,10 @@ export const clubs = persisted('presets', [
             subtitle: '',
             content: '',
         },
-        website: '',
+        links: {
+            website: '',
+            other_links: [],
+        }
 	},
     {
 		name: 'Ping-Pong Club',
@@ -79,6 +86,9 @@ export const clubs = persisted('presets', [
             subtitle: '',
             content: '',
         },
-        website: '',
+        links: {
+            website: '',
+            other_links: [],
+        }
 	},
 ]);
