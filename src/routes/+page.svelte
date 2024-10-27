@@ -6,6 +6,7 @@
 <script>
     import { clubs } from '$lib/clubs.js';
     import IconStar from 'phosphor-svelte/lib/StarFour';
+    import IconCheckSquare from 'phosphor-svelte/lib/CheckSquare';
 </script>
 
 <main>
@@ -24,13 +25,13 @@
                         <p>{club.day}s ~ {club.start_time} - {club.end_time} ~ {club.room}</p>
                         <p>
                             {#if club.volunteer_hours}
-                                Volunteer Hours Provided
+                                Volunteer Hours <IconCheckSquare />
                             {/if}
                             {#if club.food}
-                                Food Provided
+                                Food <IconCheckSquare />
                             {/if}
                             {#if club.drinks}
-                                Drinks Provided
+                                Drinks <IconCheckSquare />
                             {/if}
                         </p>
                         <p>{club.info.hook}</p>
