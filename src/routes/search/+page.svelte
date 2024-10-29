@@ -541,6 +541,10 @@
             text-align: left;
 		}
 
+        &:hover {
+            background-color: rgb(112, 125, 148);
+        }
+
 		&:hover:not(:has(button:hover)) {
 			background-color: var(--bg-3);
 		}
