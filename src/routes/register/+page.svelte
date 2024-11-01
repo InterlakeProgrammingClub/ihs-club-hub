@@ -16,6 +16,9 @@
         <h1>Want a club website?</h1>
         <p>We got you! Just hit us up and we'll assign members to work on your club website.</p>
         <p>Notice: We are currently booked with numerous websites and are facing delays. If you have requested a website, expect completion no sooner than 2 weeks.</p>
+        <br />
+        <h1>Want your club to be sponsored?</h1>
+        <p>No problem. Just contact us and we can make your club sponsored to increase visibility upon an agreed price.</p>
     </div>
 </div>
 
