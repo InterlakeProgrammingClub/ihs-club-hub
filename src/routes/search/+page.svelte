@@ -183,7 +183,11 @@
 
         $clubs.forEach((club) => {
             for (let i = 0; i < filterList.length; i++) {
-                if (club.categories.includes(filterList[i]) || club.day.includes(filterList[i])) {
+                let daylist = '';
+                for (let j = 0; j < club.times.length; j++) {
+                    daylist += club.times[j].day;
+                }
+                if (club.categories.includes(filterList[i]) || daylist.includes(filterList[i])) {
                     if (!filteredClubs.includes(club.id)) {
                         filteredClubs.push(club.id);
                     }
@@ -254,7 +258,11 @@
                                     <a href="/{club.id}" class="club" id='result' title="{club.name}">
                                         <div class="left">
                                             <h3 class='highlighted'>{club.name}</h3>
-                                            <p>{club.day}s ~ {club.start_time} - {club.end_time} ~ {club.room}</p>
+                                            <p>{club.room} ~
+                                                {#each club.times as time, j}
+                                                    {time.day}s ~ {time.start_time} - {time.end_time}
+                                                {/each}
+                                            </p>
                                             <p>
                                                 {#if club.volunteer_hours}
                                                     Volunteer Hours <IconCheckSquare />
@@ -278,7 +286,11 @@
                             <a href="/{club.id}" class="club" id='result' title="{club.name}">
                                 <div class="left">
                                     <h3 class='highlighted'>{club.name}</h3>
-                                    <p>{club.day}s ~ {club.start_time} - {club.end_time} ~ {club.room}</p>
+                                    <p>{club.room} ~
+                                        {#each club.times as time, j}
+                                            {time.day}s ~ {time.start_time} - {time.end_time}
+                                        {/each}
+                                    </p>
                                     <p>
                                         {#if club.volunteer_hours}
                                             Volunteer Hours <IconCheckSquare />
@@ -307,7 +319,11 @@
                                     <a href="/{club.id}" class="club" id='result' title="{club.name}">
                                         <div class="left">
                                             <h3 class='highlighted'>{club.name}</h3>
-                                            <p>{club.day}s ~ {club.start_time} - {club.end_time} ~ {club.room}</p>
+                                            <p>{club.room} ~
+                                                {#each club.times as time, j}
+                                                    {time.day}s ~ {time.start_time} - {time.end_time}
+                                                {/each}
+                                            </p>
                                             <p>
                                                 {#if club.volunteer_hours}
                                                     Volunteer Hours <IconCheckSquare />
@@ -330,7 +346,11 @@
                             <a href="/{club.id}" class="club" id='result' title="{club.name}">
                                 <div class="left">
                                     <h3 class='highlighted'>{club.name}</h3>
-                                    <p>{club.day}s ~ {club.start_time} - {club.end_time} ~ {club.room}</p>
+                                    <p>{club.room} ~
+                                        {#each club.times as time, j}
+                                            {time.day}s ~ {time.start_time} - {time.end_time}
+                                        {/each}
+                                    </p>
                                     <p>
                                         {#if club.volunteer_hours}
                                             Volunteer Hours <IconCheckSquare />
@@ -359,7 +379,11 @@
                                     <a href="/{club.id}" class="club" title="{club.name}">
                                         <div class="left">
                                             <h3 class='highlighted'>{club.name}</h3>
-                                            <p>{club.day}s ~ {club.start_time} - {club.end_time} ~ {club.room}</p>
+                                            <p>{club.room} ~
+                                                {#each club.times as time, j}
+                                                    {time.day}s ~ {time.start_time} - {time.end_time}
+                                                {/each}
+                                            </p>
                                             <p>
                                                 {#if club.volunteer_hours}
                                                     Volunteer Hours <IconCheckSquare />
@@ -383,7 +407,11 @@
                             <a href="/{club.id}" class="club" title="{club.name}">
                                 <div class="left">
                                     <h3 class='highlighted'>{club.name}</h3>
-                                    <p>{club.day}s ~ {club.start_time} - {club.end_time} ~ {club.room}</p>
+                                    <p>{club.room} ~
+                                        {#each club.times as time, j}
+                                            {time.day}s ~ {time.start_time} - {time.end_time}
+                                        {/each}
+                                    </p>
                                     <p>
                                         {#if club.volunteer_hours}
                                             Volunteer Hours <IconCheckSquare />
@@ -412,7 +440,11 @@
                                     <a href="/{club.id}" class="club" title="{club.name}">
                                         <div class="left">
                                             <h3 class='highlighted'>{club.name}</h3>
-                                            <p>{club.day}s ~ {club.start_time} - {club.end_time} ~ {club.room}</p>
+                                            <p>{club.room} ~
+                                                {#each club.times as time, j}
+                                                    {time.day}s ~ {time.start_time} - {time.end_time}
+                                                {/each}
+                                            </p>
                                             <p>
                                                 {#if club.volunteer_hours}
                                                     Volunteer Hours <IconCheckSquare />
@@ -435,7 +467,11 @@
                             <a href="/{club.id}" class="club" title="{club.name}">
                                 <div class="left">
                                     <h3 class='highlighted'>{club.name}</h3>
-                                    <p>{club.day}s ~ {club.start_time} - {club.end_time} ~ {club.room}</p>
+                                    <p>{club.room} ~
+                                        {#each club.times as time, j}
+                                            {time.day}s ~ {time.start_time} - {time.end_time}
+                                        {/each}
+                                    </p>
                                     <p>
                                         {#if club.volunteer_hours}
                                             Volunteer Hours <IconCheckSquare />

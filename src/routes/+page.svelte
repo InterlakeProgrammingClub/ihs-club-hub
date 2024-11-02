@@ -22,7 +22,11 @@
                 <a href="/{club.id}" class="club" title="{club.name}">
                     <div class="left">
                         <h3 class='highlighted'>{club.name}</h3>
-                        <p>{club.day}s ~ {club.start_time} - {club.end_time} ~ {club.room}</p>
+                        <p>{club.room} ~
+                            {#each club.times as time, j}
+                                {time.day}s ~ {time.start_time} - {time.end_time}
+                            {/each}
+                        </p>
                         <p>
                             {#if club.volunteer_hours}
                                 Volunteer Hours <IconCheckSquare />
@@ -50,7 +54,11 @@
                 <a href="/{club.id}" class="club" title="{club.name}">
                     <div class="left">
                         <h3 class='highlighted'>{club.name}</h3>
-                        <p>{club.day}s ~ {club.start_time} - {club.end_time} ~ {club.room}</p>
+                        <p>{club.room} ~
+                            {#each club.times as time, j}
+                                {time.day}s ~ {time.start_time} - {time.end_time}
+                            {/each}
+                        </p>
                         <p>
                             {#if club.volunteer_hours}
                                 Volunteer Hours Provided
